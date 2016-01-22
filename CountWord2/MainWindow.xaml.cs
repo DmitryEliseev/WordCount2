@@ -117,6 +117,22 @@ namespace CountWord2
                         string output = String.Format("        {0}{1}{2}\r\n", item.Value, space, item.Key);
                         MainTextBox.AppendText(output);
                     }
+
+                    w1 firstW = new w1();
+                    w2 secondW = new w2();
+
+                    firstW.w1TextBox.Text = "Cлова\r\n";
+                    secondW.w2TextBox.Text = "Количество\r\n";
+
+                    foreach (var item in wordCount.OrderByDescending(k => k.Value))
+                    {
+                        firstW.w1TextBox.AppendText(item.Value.ToString()+"\r\n");
+                        secondW.w2TextBox.AppendText(item.Key.ToString() + "\r\n");
+
+                    }
+
+                    firstW.Show();
+                    secondW.Show();
                 })).ContinueWith(prevTask => Dispatcher.Invoke(() => 
                 {
                     int words_length = words.Length;
