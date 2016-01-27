@@ -56,6 +56,9 @@
     <Compile Include="w1.xaml.cs">
       <DependentUpon>w1.xaml</DependentUpon>
     </Compile>
+    <Compile Include="w2.xaml.cs">
+      <DependentUpon>w2.xaml</DependentUpon>
+    </Compile>
     <Page Include="InputText.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -76,6 +79,10 @@
       <SubType>Code</SubType>
     </Compile>
     <Page Include="w1.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="w2.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

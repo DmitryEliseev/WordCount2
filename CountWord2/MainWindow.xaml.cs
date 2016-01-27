@@ -24,6 +24,8 @@ namespace CountWord2
     {
         public static string originalText;
         public static string processedText;
+        w1 firstW;
+        w2 secondW;
 
         public MainWindow()
         {
@@ -89,6 +91,8 @@ namespace CountWord2
 
         private void CountWords_Click(object sender, RoutedEventArgs e)
         {
+           
+
             var words = processedText.Split(new char[] { ' ' }, StringSplitOptions.RemoveEmptyEntries);
 
             Dictionary<string, int> wordCount = new Dictionary<string, int>();
@@ -118,8 +122,8 @@ namespace CountWord2
                         MainTextBox.AppendText(output);
                     }
 
-                    w1 firstW = new w1();
-                    w2 secondW = new w2();
+                    firstW = new w1();
+                    secondW = new w2();
 
                     firstW.w1TextBox.Text = "Cлова\r\n";
                     secondW.w2TextBox.Text = "Количество\r\n";
