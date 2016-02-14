@@ -26,6 +26,7 @@ namespace CountWord2
         public static string processedText;
         w1 firstW;
         w2 secondW;
+        StatisticsWindow sw;
 
         public MainWindow()
         {
@@ -122,6 +123,7 @@ namespace CountWord2
                         MainTextBox.AppendText(output);
                     }
 
+                    
                     firstW = new w1();
                     secondW = new w2();
 
@@ -130,13 +132,14 @@ namespace CountWord2
 
                     foreach (var item in wordCount.OrderByDescending(k => k.Value))
                     {
-                        firstW.w1TextBox.AppendText(item.Value.ToString()+"\r\n");
-                        secondW.w2TextBox.AppendText(item.Key.ToString() + "\r\n");
+                        firstW.w1TextBox.AppendText(item.Key.ToString()+"\r\n");
+                        secondW.w2TextBox.AppendText(item.Value.ToString() + "\r\n");
 
                     }
 
-                    firstW.Show();
-                    secondW.Show();
+                    //firstW.Show();
+                    //secondW.Show();
+                    
                 })).ContinueWith(prevTask => Dispatcher.Invoke(() => 
                 {
                     int words_length = words.Length;
@@ -162,7 +165,10 @@ namespace CountWord2
                     str += String.Format("Cлов длиной 10: {0} ({1:#.##}%)\r\n", NumberOfWords[9], (double)NumberOfWords[9] / words_length * 100);
                     str += String.Format("Остальные слова: {0} ({1:#.##}%)\r\n", NumberOfWords[10], (double)NumberOfWords[10] / words_length * 100);
 
-                    MessageBox.Show(str, "Статистика", MessageBoxButton.OK, MessageBoxImage.Information);
+                    sw = new StatisticsWindow();
+                    sw.Show();
+                    sw.swTextBox.Text = str;
+
                 }));
         }
 
