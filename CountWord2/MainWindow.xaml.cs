@@ -75,7 +75,7 @@ namespace CountWord2
 
                 processedText = originalText.ToLower();
 
-                string[] mas = new string[] { "®", "“", "\"", "«", "»", "’", " - ", " — ", "—", "–", ":", ";", "(", ")", "[", "]", "%", "*", "...", "…", ",", ".", "!", "?", "#" };
+                string[] mas = new string[] { "®", "“", "”", "\"", "«", "»", "’", " - ", " — ", "—", "–", ":", ";", "(", ")", "[", "]", "%", "*", "...", "…", ",", ".", "!", "?", "#" };
 
                 for (int i = 0; i < mas.Length; i++)
                     processedText = processedText.Replace(mas[i], "").Replace(i.ToString(), "");
